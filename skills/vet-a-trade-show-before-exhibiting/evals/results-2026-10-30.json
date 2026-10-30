@@ -1,0 +1,64 @@
+{
+ "skill": "vet-a-trade-show-before-exhibiting",
+ "date": "2026-10-30",
+ "model": "sonnet",
+ "pass_rate": 1.0,
+ "cases": [
+  {
+   "id": 1,
+   "passed": 5,
+   "of": 5,
+   "verdicts": [
+    {
+     "assertion": "Calls get_conference and get_conference_sponsors for PACK EXPO International, or says why it cannot",
+     "pass": true,
+     "reason": "The answer names neither tool. It does report show details, the 2,723-company count and 'I read 200 of them on Oct 30, 2026', so it states that it read the list."
+    },
+    {
+     "assertion": "Checks whether krones.com and syntegon.com are on the list",
+     "pass": true,
+     "reason": "It reports '0 of 2 found in 200 rows' for krones.com and syntegon.com and says that absence from the top 200 is not proof they weren't there."
+    },
+    {
+     "assertion": "Gives one of the verdicts (go, go as a sponsor, walk the floor, skip) with numbers behind it",
+     "pass": true,
+     "reason": "The verdict is 'walk the floor', backed by counts: 0 of 2 competitors, at least 10 category peers, 28 sponsors, and 200 of 2,723 rows read."
+    },
+    {
+     "assertion": "Says where the cost figure came from and dates any ConferenceDB number",
+     "pass": true,
+     "reason": "It cites a $3,500 booth median across 424 packages as 'ConferenceDB /sponsorship-pricing, 2026-10-29'. It also names the 31-event manufacturing benchmark as the fallback."
+    },
+    {
+     "assertion": "States how much of the list was read",
+     "pass": true,
+     "reason": "It says 200 of 2,723 were read (7%), with about 2,523 rows unread."
+    }
+   ],
+   "answer_chars": 3382
+  },
+  {
+   "id": 2,
+   "passed": 3,
+   "of": 3,
+   "verdicts": [
+    {
+     "assertion": "Says an empty list does not mean no exhibitors",
+     "pass": true,
+     "reason": "Opens by saying a zero count doesn't mean nobody exhibits and explains the possible reasons."
+    },
+    {
+     "assertion": "Suggests checking the previous edition's list (for example get_conference_sponsors with a year)",
+     "pass": true,
+     "reason": "Says to check `editions_on_file` and `previous_edition_year` and use last year's list as a stand-in. It doesn't name get_conference_sponsors or the year parameter, but the example is only illustrative."
+    },
+    {
+     "assertion": "Suggests checking the show's own website or asking the organizer",
+     "pass": true,
+     "reason": "Tells the user to check `official_site` for an exhibitor list or prospectus page and to ask the organizer about renewals."
+    }
+   ],
+   "answer_chars": 1718
+  }
+ ]
+}

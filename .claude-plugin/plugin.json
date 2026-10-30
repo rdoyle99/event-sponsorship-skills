@@ -1,0 +1,19 @@
+{
+  "name": "event-sponsorship-skills",
+  "description": "Event and conference sponsorship skills for AI agents: find sponsors for an event, price packages, write the prospectus and the outreach drafts, vet a trade show, budget a booth, and track where competitors exhibit, on live ConferenceDB data",
+  "version": "1.0.0",
+  "author": {
+    "name": "Ryan Doyle",
+    "url": "https://conferencedatabase.com?ref=event-sponsorship-skills"
+  },
+  "homepage": "https://github.com/rdoyle99/event-sponsorship-skills",
+  "repository": "https://github.com/rdoyle99/event-sponsorship-skills",
+  "license": "MIT",
+  "skills": "./skills",
+  "mcpServers": {
+    "conferencedb": {
+      "type": "http",
+      "url": "https://conferencedatabase.com/api/mcp"
+    }
+  }
+}

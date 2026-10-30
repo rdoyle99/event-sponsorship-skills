@@ -1,0 +1,30 @@
+{
+  "skill_name": "price-sponsorship-packages",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "We're running a 400-person healthcare IT conference in Boston and plan to sell Platinum, Gold, Silver and a booth tier. What should each cost?",
+      "expected_output": "Quotes the ConferenceDB medians with their counts and the 2026-10-29 date, including the Healthcare and Medicine figures. Calls search_conferences and get_conference for comparable healthcare events with published prices. Proposes a four-tier ladder anchored on the comparables, with a benefit added at each step and a count per tier, and shows a comparison table with edition years.",
+      "assertions": [
+        "Quotes at least one ConferenceDB median with its count and the date 2026-10-29",
+        "Calls search_conferences or get_conference for comparable events, or says why it cannot",
+        "Proposes a price for each of the four tiers",
+        "Says what each tier adds over the one below",
+        "Does not mix currencies in one figure without saying so"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "A rival show charges EUR 8,000 for gold and another charges $12,000. What's the average gold price I should use?",
+      "expected_output": "Refuses to average across currencies without converting at a stated rate and date. Explains that tier names are not standard and compares what each package includes. Gives the Gold level median from ConferenceDB with its count and date as a reference point and suggests pulling more comparables with get_conference.",
+      "assertions": [
+        "Does not average EUR and USD prices without a stated conversion",
+        "Points out that tier names differ between events and compares what is included",
+        "Gives the ConferenceDB Gold median of $10,000 with its count (794) or date (2026-10-29)",
+        "Suggests checking more comparable events through the ConferenceDB MCP"
+      ],
+      "files": []
+    }
+  ]
+}

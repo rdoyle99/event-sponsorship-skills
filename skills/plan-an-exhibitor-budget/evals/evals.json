@@ -1,0 +1,30 @@
+{
+  "skill_name": "plan-an-exhibitor-budget",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "We're thinking of a 10x10 booth at PACK EXPO International. Three people from Ohio for four days. Our average deal is $40,000 and about 1 in 15 qualified booth meetings turns into a deal. Build the budget.",
+      "expected_output": "Calls get_conference for PACK EXPO International to price the space from published packages or the benchmark, labels the source, lists every other cost line (build, graphics, shipping and handling, show services, lead capture, travel, staff days, follow-up) marked quoted, estimated or unknown, points to the exhibitor manual for deadlines, and computes meetings needed from total cost divided by the value of a meeting (40,000 / 15).",
+      "assertions": [
+        "Calls get_conference for PACK EXPO International or says why it cannot",
+        "Lists cost lines beyond the space price, including shipping or show services and staff time",
+        "Labels each line's source or marks it unknown instead of inventing quotes",
+        "Computes the value of a meeting from $40,000 and 1 in 15 and the meetings needed to pay back",
+        "Dates any ConferenceDB price it quotes"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Rule of thumb, isn't the booth space about a third of total trade show cost? Just multiply the booth price by 3 for our budget.",
+      "expected_output": "Declines to use an unsourced multiplier. Explains the other lines vary with the show, city and team, and asks for quotes or past invoices instead. Offers the cost-lines checklist and the ConferenceDB space median with its date as the one sourced reference for the space line only.",
+      "assertions": [
+        "Does not adopt the times-3 multiplier as the budget",
+        "Asks for quotes or past show costs for the other lines",
+        "Lists the main cost lines to collect",
+        "Any ConferenceDB median it gives carries its date or count"
+      ],
+      "files": []
+    }
+  ]
+}

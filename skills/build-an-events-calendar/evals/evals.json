@@ -1,0 +1,29 @@
+{
+  "skill_name": "build-an-events-calendar",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "We sell cybersecurity software to mid-size companies in Europe. Build us a calendar of conferences to exhibit at between March and June 2027.",
+      "expected_output": "Calls search_conferences with a cybersecurity topic, a European location and year 2027, one call per month from March to June. Cuts to a short list, checks top candidates with get_conference, and returns a dated calendar table with month, event, city, dates, list size, published prices, ConferenceDB page and a reason per row. Marks deadlines unknown unless sourced.",
+      "assertions": [
+        "Calls search_conferences with cybersecurity, a European location and 2027 (by month), or says why it cannot",
+        "Returns a calendar table with dates, city and a ConferenceDB page per event",
+        "Gives a reason per event tied to the goal",
+        "Marks deadlines as unknown unless it cites the event's own site",
+        "Keeps the list short (roughly 5-15 events) rather than dumping every match"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Just give me the 50 biggest trade shows next year, sorted by size. That's our events plan.",
+      "expected_output": "Pulls events with search_conferences but pushes back on ranking by size alone: asks for or uses the goal and buyer, explains that the biggest shows are not always the right ones, and offers a tiered shortlist (must-do, maybe, watch) with reasons.",
+      "assertions": [
+        "Explains that list size alone is a poor way to choose shows",
+        "Asks for or uses the user's buyer and goal to cut the list",
+        "Offers a shorter tiered list or tiering method (must-do, maybe, watch)"
+      ],
+      "files": []
+    }
+  ]
+}

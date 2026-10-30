@@ -1,0 +1,64 @@
+{
+ "skill": "track-competitor-event-spend",
+ "date": "2026-10-30",
+ "model": "sonnet",
+ "pass_rate": 0.875,
+ "cases": [
+  {
+   "id": 1,
+   "passed": 4,
+   "of": 5,
+   "verdicts": [
+    {
+     "assertion": "Calls get_company_conferences for salesforce.com, zoho.com and hubspot.com, or says why it cannot",
+     "pass": true,
+     "reason": "The answer never names the tool call. It does report per-domain results, including total_events and other_matches, for all three domains, so the calls are implied."
+    },
+    {
+     "assertion": "Shows a merged table with each company's role at each event",
+     "pass": true,
+     "reason": "The merged table has hubspot.com, salesforce.com and zoho.com columns with role and tier per event, sorted by number of competitors listed."
+    },
+    {
+     "assertion": "Lists the gap shows where a competitor is listed and hubspot.com is not",
+     "pass": false,
+     "reason": "The answer sets its own 2+ competitor rule, so its gap list holds only the two Shoptalk editions. Shows with a single competitor and no HubSpot are listed but labeled 'not gaps'."
+    },
+    {
+     "assertion": "Dates the ConferenceDB read",
+     "pass": true,
+     "reason": "The title states 'read 2026-10-30'."
+    },
+    {
+     "assertion": "Does not present published package prices as actual competitor spend",
+     "pass": true,
+     "reason": "It calls the $200,000 Level 5 figure a published package price from a 2023 brochure and says it is not what Salesforce or Zoho actually paid."
+    }
+   ],
+   "answer_chars": 4570
+  },
+  {
+   "id": 2,
+   "passed": 3,
+   "of": 3,
+   "verdicts": [
+    {
+     "assertion": "Says actual spend is not known from the data",
+     "pass": true,
+     "reason": "States ConferenceDB can't say how much Gong spent and holds roles and tiers, not invoices."
+    },
+    {
+     "assertion": "Calls get_company_conferences for gong.io or says why it cannot",
+     "pass": true,
+     "reason": "Shows gong.io results (\"read 2026-10-30\") with event table and company page, which implies the lookup was made. The answer never names the tool, though."
+    },
+    {
+     "assertion": "Labels any price as the published package price with a year, not as spend",
+     "pass": true,
+     "reason": "The answer gives no price. It says it didn't pull published package prices and that any such range would be for the show, not Gong's cost. So there is no mislabeled price."
+    }
+   ],
+   "answer_chars": 1382
+  }
+ ]
+}

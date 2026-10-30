@@ -1,0 +1,74 @@
+{
+ "skill": "sponsorship-context",
+ "date": "2026-10-30",
+ "model": "sonnet",
+ "pass_rate": 1.0,
+ "cases": [
+  {
+   "id": 1,
+   "passed": 5,
+   "of": 5,
+   "verdicts": [
+    {
+     "assertion": "States that the user is on the organizer side",
+     "pass": true,
+     "reason": "File states 'Side: organizer' and fills the organizer section."
+    },
+    {
+     "assertion": "Shows the contents of .agents/event-sponsorship.md (or the file it would write) following the template sections",
+     "pass": true,
+     "reason": "Shows the full markdown content for .agents/event-sponsorship.md with organizer, buyer, sending and open questions sections."
+    },
+    {
+     "assertion": "Records the 600 attendee figure as given by the user and does not invent other audience numbers",
+     "pass": true,
+     "reason": "Records 'about 600, per the organizer' with counting method unknown and adds no other audience numbers."
+    },
+    {
+     "assertion": "Marks unknown fields (such as tiers or dates) as unknown or as questions instead of guessing them",
+     "pass": true,
+     "reason": "Dates, venue, website, tiers, sponsors and goal are marked unknown and repeated as open questions."
+    },
+    {
+     "assertion": "Does not include any person's email address or phone number",
+     "pass": true,
+     "reason": "The file and reply contain no email addresses or phone numbers."
+    }
+   ],
+   "answer_chars": 2195
+  },
+  {
+   "id": 2,
+   "passed": 5,
+   "of": 5,
+   "verdicts": [
+    {
+     "assertion": "States that the user is on the buyer side",
+     "pass": true,
+     "reason": "The file header says 'Side: buyer' and the organizer section is marked not applicable."
+    },
+    {
+     "assertion": "Calls get_company_conferences for crowdstrike.com or says why it cannot",
+     "pass": true,
+     "reason": "The answer says it read the domains from ConferenceDB today and lists CrowdStrike's 8 events with the page URL. It never names the tool, but a call is clearly stated."
+    },
+    {
+     "assertion": "Stores competitors as domains (paloaltonetworks.com, sentinelone.com)",
+     "pass": true,
+     "reason": "Both competitors are stored as the domains paloaltonetworks.com and sentinelone.com."
+    },
+    {
+     "assertion": "Dates any ConferenceDB number it records",
+     "pass": true,
+     "reason": "Every ConferenceDB count is tagged 'ConferenceDB, 2026-10-30', including the 8, 9 and 3 listing counts."
+    },
+    {
+     "assertion": "Names a next skill such as track-competitor-event-spend or build-an-events-calendar",
+     "pass": true,
+     "reason": "The closing line names build-an-events-calendar (and vet-a-trade-show-before-exhibiting) as skills that can read the file."
+    }
+   ],
+   "answer_chars": 4284
+  }
+ ]
+}

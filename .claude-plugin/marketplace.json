@@ -1,0 +1,19 @@
+{
+  "name": "event-sponsorship-skills",
+  "owner": {
+    "name": "Ryan Doyle",
+    "url": "https://conferencedatabase.com?ref=event-sponsorship-skills"
+  },
+  "metadata": {
+    "description": "Event sponsorship skills for AI agents, backed by ConferenceDB's free lists of who sponsors and exhibits at which conference",
+    "version": "1.0.0",
+    "repository": "https://github.com/rdoyle99/event-sponsorship-skills"
+  },
+  "plugins": [
+    {
+      "name": "event-sponsorship-skills",
+      "description": "Event sponsorship skills: sponsorship context, find event sponsors, price packages, write a prospectus, draft sponsor outreach, vet a trade show, plan an exhibitor budget, track competitor event spend, build an events calendar",
+      "source": "./"
+    }
+  ]
+}

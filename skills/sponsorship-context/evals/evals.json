@@ -1,0 +1,31 @@
+{
+  "skill_name": "sponsorship-context",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I run FinPay Summit, a fintech conference in Austin, about 600 attendees, mostly heads of payments at banks. Set up our sponsorship context so the other skills can use it.",
+      "expected_output": "Identifies the user as an organizer. Asks or records the event name, website, dates, attendee count with its source, titles, industries and tiers. Checks whether the event is listed with get_conference or says why it cannot. Writes .agents/event-sponsorship.md from the template with the organizer section filled and unknowns marked. Holds no personal contact data.",
+      "assertions": [
+        "States that the user is on the organizer side",
+        "Shows the contents of .agents/event-sponsorship.md (or the file it would write) following the template sections",
+        "Records the 600 attendee figure as given by the user and does not invent other audience numbers",
+        "Marks unknown fields (such as tiers or dates) as unknown or as questions instead of guessing them",
+        "Does not include any person's email address or phone number"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "We're a cybersecurity vendor (our domain is crowdstrike.com) and want to plan next year's trade shows. Competitors are paloaltonetworks.com and sentinelone.com. Write our context file.",
+      "expected_output": "Identifies the buyer side. Calls get_company_conferences on crowdstrike.com and records where it is listed, dated. Stores competitors as domains. Asks for budget, regions and goal. Writes the buyer section of .agents/event-sponsorship.md and points to track-competitor-event-spend and build-an-events-calendar as next steps.",
+      "assertions": [
+        "States that the user is on the buyer side",
+        "Calls get_company_conferences for crowdstrike.com or says why it cannot",
+        "Stores competitors as domains (paloaltonetworks.com, sentinelone.com)",
+        "Dates any ConferenceDB number it records",
+        "Names a next skill such as track-competitor-event-spend or build-an-events-calendar"
+      ],
+      "files": []
+    }
+  ]
+}

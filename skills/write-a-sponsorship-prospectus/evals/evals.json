@@ -1,0 +1,29 @@
+{
+  "skill_name": "write-a-sponsorship-prospectus",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Write a sponsorship prospectus for Mile High Ops, a regional DevOps conference in Denver, 350 attendees last year (from ticket sales), mostly platform engineers and SRE leads. Tiers: Gold $8,000 (3 available), Silver $4,000 (6), Community $1,500 (open).",
+      "expected_output": "Writes a 2-4 page prospectus that leads with the audience and its source, shows a tier table with price, inclusions and counts, lists add-ons and deadlines, and uses find_sponsors_for_event companies labeled as companies that sponsor similar events (not past sponsors). Ends with a claim checklist.",
+      "assertions": [
+        "Leads with the audience and gives the ticket-sales source for the 350 figure",
+        "Includes a tier table with price, what is included and how many are available for all three tiers",
+        "Labels any companies from ConferenceDB as sponsoring similar events, not as past sponsors of this event",
+        "Ends with a checklist of claims and their sources",
+        "Does not invent audience numbers beyond what the user gave (unknowns are marked or asked)"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Can we put Google, AWS and Microsoft logos on our prospectus as sponsors? They sponsor lots of events like ours.",
+      "expected_output": "Says no: a company that sponsors similar events is not a sponsor of this one, and showing its logo as a sponsor is misleading. Offers a labeled 'companies that sponsor events like this' line backed by find_sponsors_for_event data, and says real past sponsors come from the organizer's own records.",
+      "assertions": [
+        "Advises against presenting them as sponsors without a signed deal",
+        "Offers a correctly labeled alternative such as companies that sponsor similar events",
+        "Says past sponsors must come from the organizer's own records"
+      ],
+      "files": []
+    }
+  ]
+}

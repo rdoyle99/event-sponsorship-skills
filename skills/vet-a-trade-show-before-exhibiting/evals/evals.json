@@ -1,0 +1,29 @@
+{
+  "skill_name": "vet-a-trade-show-before-exhibiting",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "We sell packaging automation equipment to food and beverage manufacturers. Should we exhibit at PACK EXPO International? Our competitors are krones.com and syntegon.com.",
+      "expected_output": "Calls get_conference for PACK EXPO International and get_conference_sponsors to read the list. Counts competitors by domain, likely buyers and category share, checks the previous edition if on file, estimates the space cost from published packages or the ConferenceDB booth median with its date, and gives a verdict among go, go as a sponsor, walk the floor or skip with the counts behind it.",
+      "assertions": [
+        "Calls get_conference and get_conference_sponsors for PACK EXPO International, or says why it cannot",
+        "Checks whether krones.com and syntegon.com are on the list",
+        "Gives one of the verdicts (go, go as a sponsor, walk the floor, skip) with numbers behind it",
+        "Says where the cost figure came from and dates any ConferenceDB number",
+        "States how much of the list was read"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "ConferenceDB shows zero exhibitors for a show we're looking at next year. Does that mean nobody exhibits there?",
+      "expected_output": "Explains that an empty list may mean the show hasn't published its exhibitor list yet or ConferenceDB hasn't read it, not that nobody exhibits. Suggests checking the previous edition with get_conference_sponsors and the year parameter, the show's own site, and asking the organizer for last edition's numbers.",
+      "assertions": [
+        "Says an empty list does not mean no exhibitors",
+        "Suggests checking the previous edition's list (for example get_conference_sponsors with a year)",
+        "Suggests checking the show's own website or asking the organizer"
+      ],
+      "files": []
+    }
+  ]
+}

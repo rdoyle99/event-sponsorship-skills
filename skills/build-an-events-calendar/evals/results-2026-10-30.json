@@ -1,0 +1,64 @@
+{
+ "skill": "build-an-events-calendar",
+ "date": "2026-10-30",
+ "model": "sonnet",
+ "pass_rate": 1.0,
+ "cases": [
+  {
+   "id": 1,
+   "passed": 5,
+   "of": 5,
+   "verdicts": [
+    {
+     "assertion": "Calls search_conferences with cybersecurity, a European location and 2027 (by month), or says why it cannot",
+     "pass": true,
+     "reason": "The answer says it used the ConferenceDB MCP and searched \"cybersecurity\" and \"security\" for Europe by month, for example May returning 0 results. It never quotes the tool calls, but the stated searches count as calls."
+    },
+    {
+     "assertion": "Returns a calendar table with dates, city and a ConferenceDB page per event",
+     "pass": true,
+     "reason": "The table has Dates, City and ConferenceDB page columns, and every event row has a link."
+    },
+    {
+     "assertion": "Gives a reason per event tied to the goal",
+     "pass": true,
+     "reason": "Every row has a Why entry tied to fit with the user's category and buyers, and the May row explains the gap."
+    },
+    {
+     "assertion": "Marks deadlines as unknown unless it cites the event's own site",
+     "pass": true,
+     "reason": "Every row says Unknown for the deadline, and the caveats tell the user to check each event's own site."
+    },
+    {
+     "assertion": "Keeps the list short (roughly 5-15 events) rather than dumping every match",
+     "pass": true,
+     "reason": "There are 7 events in the table, plus 3 excluded ones named in a short \"Left off\" list."
+    }
+   ],
+   "answer_chars": 4971
+  },
+  {
+   "id": 2,
+   "passed": 3,
+   "of": 3,
+   "verdicts": [
+    {
+     "assertion": "Explains that list size alone is a poor way to choose shows",
+     "pass": true,
+     "reason": "The closing section says the biggest show in a category is often the most expensive place to be ignored, a team can staff only a few booths, and the list is skewed toward industrial and agri-food. It also says the table is only a size ranking. The point is made but kept short."
+    },
+    {
+     "assertion": "Asks for or uses the user's buyer and goal to cut the list",
+     "pass": true,
+     "reason": "It asks for the user's industry, regions, budget and goal (customers, sponsors, hiring) and offers to cut the list to 5-15 shows on that basis. It asks for the information rather than using it, which satisfies the 'asks for' wording."
+    },
+    {
+     "assertion": "Offers a shorter tiered list or tiering method (must-do, maybe, watch)",
+     "pass": true,
+     "reason": "It offers to cut the list to 5-15 shows and tier them as must-do, maybe and watch, using package prices, competitors and deadlines. This is an offer, not a delivered tiered list, but the assertion only requires offering a list or method."
+    }
+   ],
+   "answer_chars": 5730
+  }
+ ]
+}

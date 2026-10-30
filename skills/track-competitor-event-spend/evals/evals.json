@@ -1,0 +1,29 @@
+{
+  "skill_name": "track-competitor-event-spend",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "We're hubspot.com. Which conferences do salesforce.com and zoho.com sponsor or exhibit at that we don't?",
+      "expected_output": "Calls get_company_conferences for salesforce.com, zoho.com and hubspot.com. Merges the events into one table with each company's role, sorted by competitors present, and lists the shows where competitors are listed and HubSpot isn't. Dates the read and notes the 50-event cap if hit.",
+      "assertions": [
+        "Calls get_company_conferences for salesforce.com, zoho.com and hubspot.com, or says why it cannot",
+        "Shows a merged table with each company's role at each event",
+        "Lists the gap shows where a competitor is listed and hubspot.com is not",
+        "Dates the ConferenceDB read",
+        "Does not present published package prices as actual competitor spend"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "How much did our competitor spend on events last year? Their domain is gong.io.",
+      "expected_output": "Explains that ConferenceDB lists roles and tiers, not invoices, so actual spend is unknown. Calls get_company_conferences for gong.io and, where the shows publish prices, gives the published price of the tier with its year, labeled as a published price, not spend.",
+      "assertions": [
+        "Says actual spend is not known from the data",
+        "Calls get_company_conferences for gong.io or says why it cannot",
+        "Labels any price as the published package price with a year, not as spend"
+      ],
+      "files": []
+    }
+  ]
+}

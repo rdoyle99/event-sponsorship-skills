@@ -1,0 +1,69 @@
+{
+ "skill": "price-sponsorship-packages",
+ "date": "2026-10-30",
+ "model": "sonnet",
+ "pass_rate": 1.0,
+ "cases": [
+  {
+   "id": 1,
+   "passed": 5,
+   "of": 5,
+   "verdicts": [
+    {
+     "assertion": "Quotes at least one ConferenceDB median with its count and the date 2026-10-29",
+     "pass": true,
+     "reason": "It cites Platinum $20,000 (1,021 packages) and the Healthcare and Medicine median (330 events), sourced to ConferenceDB `/sponsorship-pricing`, read 2026-10-29."
+    },
+    {
+     "assertion": "Calls search_conferences or get_conference for comparable events, or says why it cannot",
+     "pass": true,
+     "reason": "It names no tool, but the comparables table is labelled 'ConferenceDB MCP, read 2026-10-30' and lists per-event editions and prices, which counts as a stated lookup."
+    },
+    {
+     "assertion": "Proposes a price for each of the four tiers",
+     "pass": true,
+     "reason": "It prices Platinum $15,000, Gold $9,000, Silver $5,500 and Booth $3,500."
+    },
+    {
+     "assertion": "Says what each tier adds over the one below",
+     "pass": true,
+     "reason": "The ladder table has a 'What it adds over the tier below' column that lists benefits for every tier."
+    },
+    {
+     "assertion": "Does not mix currencies in one figure without saying so",
+     "pass": true,
+     "reason": "It states that all prices are USD and that the medians cover US-dollar packages only."
+    }
+   ],
+   "answer_chars": 4264
+  },
+  {
+   "id": 2,
+   "passed": 4,
+   "of": 4,
+   "verdicts": [
+    {
+     "assertion": "Does not average EUR and USD prices without a stated conversion",
+     "pass": true,
+     "reason": "It says not to average as-is. Its illustrative average uses an explicitly stated assumed rate (1.15) and says to replace it with the actual rate and date."
+    },
+    {
+     "assertion": "Points out that tier names differ between events and compares what is included",
+     "pass": true,
+     "reason": "It says to 'Match on what the package includes, not the name. One show's gold may be another's silver.'"
+    },
+    {
+     "assertion": "Gives the ConferenceDB Gold median of $10,000 with its count (794) or date (2026-10-29)",
+     "pass": true,
+     "reason": "It cites a $10,000 Gold median from 794 packages, read 2026-10-29."
+    },
+    {
+     "assertion": "Suggests checking more comparable events through the ConferenceDB MCP",
+     "pass": true,
+     "reason": "It says two prices aren't a benchmark and offers to search ConferenceDB for 5 to 10 comparables. It doesn't name get_conference."
+    }
+   ],
+   "answer_chars": 1816
+  }
+ ]
+}

@@ -1,0 +1,64 @@
+{
+ "skill": "write-a-sponsorship-prospectus",
+ "date": "2026-10-30",
+ "model": "sonnet",
+ "pass_rate": 0.875,
+ "cases": [
+  {
+   "id": 1,
+   "passed": 4,
+   "of": 5,
+   "verdicts": [
+    {
+     "assertion": "Leads with the audience and gives the ticket-sales source for the 350 figure",
+     "pass": true,
+     "reason": "Page 1 opens with the 350 platform engineers and SRE leads, and the audience table cites 2026 ticket sales as the source for 350."
+    },
+    {
+     "assertion": "Includes a tier table with price, what is included and how many are available for all three tiers",
+     "pass": true,
+     "reason": "The table lists Gold $8,000 (3), Silver $4,000 (6) and Community $1,500 (open), with inclusion columns. Many inclusions are bracketed placeholders, but the structure is complete."
+    },
+    {
+     "assertion": "Labels any companies from ConferenceDB as sponsoring similar events, not as past sponsors of this event",
+     "pass": true,
+     "reason": "The document says 'Companies that sponsor events like this' and adds an explicit note that this is not a list of past Mile High Ops sponsors."
+    },
+    {
+     "assertion": "Ends with a checklist of claims and their sources",
+     "pass": false,
+     "reason": "The claim checklist is present, but it is followed by 'Notes for the organizer', so the document does not end with it."
+    },
+    {
+     "assertion": "Does not invent audience numbers beyond what the user gave (unknowns are marked or asked)",
+     "pass": true,
+     "reason": "Unknowns such as seniority, industries and regions are bracketed. The only added numbers are the 68 conferences compared and the $15,400 median top package, and both come from ConferenceDB, not from invented audience figures."
+    }
+   ],
+   "answer_chars": 4597
+  },
+  {
+   "id": 2,
+   "passed": 3,
+   "of": 3,
+   "verdicts": [
+    {
+     "assertion": "Advises against presenting them as sponsors without a signed deal",
+     "pass": true,
+     "reason": "Says not as sponsors unless they sponsored the event, calls it a false claim, and requires a signed contract or invoice before using logos."
+    },
+    {
+     "assertion": "Offers a correctly labeled alternative such as companies that sponsor similar events",
+     "pass": true,
+     "reason": "Offers plain-text 'Companies that sponsor events like this include X, Y, Z' sourced from find_sponsors_for_event."
+    },
+    {
+     "assertion": "Says past sponsors must come from the organizer's own records",
+     "pass": true,
+     "reason": "States past sponsors need a signed contract or invoice from the organizer's own records, labeled with the year, and lists 'organizer' as the checker."
+    }
+   ],
+   "answer_chars": 2207
+  }
+ ]
+}
