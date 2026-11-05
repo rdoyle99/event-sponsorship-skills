@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Event sponsorship skills for AI agents, backed by ConferenceDB's free lists of who sponsors and exhibits at which conference",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "repository": "https://github.com/rdoyle99/event-sponsorship-skills"
   },
   "plugins": [
